@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="个人主页 - 动态背景与文字展示"
+    />
+    <title>我的主页 | GitHub Pages</title>
+    <link rel="stylesheet" href="assets/styles/variables.css" />
+    <link rel="stylesheet" href="assets/styles/main.css" />
+  </head>
+  <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <main class="layout">
+      <section class="hero-card" id="hero">
+        <p class="eyebrow">HELLO THERE</p>
+        <h1 class="title">你好，我是你的名字</h1>
+        <p class="subtitle" id="typed-text">
+          我正在构建一个有趣、动态、可交互的个人主页。
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/你的用户名" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn ghost" href="#projects">查看项目</a>
+        </div>
+      </section>
+
+      <section class="panel" id="projects">
+        <h2>项目展示</h2>
+        <p>在这里展示你的代表作品。你可以把项目详情页放到 projects 目录下。</p>
+      </section>
+
+      <section class="panel" id="contact">
+        <h2>联系我</h2>
+        <p>邮箱：you@example.com</p>
+      </section>
+    </main>
+
+    <script src="assets/scripts/background.js" defer></script>
+    <script src="assets/scripts/typing.js" defer></script>
+  </body>
+</html>
