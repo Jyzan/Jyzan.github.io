@@ -1,0 +1,17 @@
+module.exports = {
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
+      colors: {
+        'glass-border': 'rgba(255,255,255,0.2)'
+      }
+    },
+  },
+  plugins: [],
+}
