@@ -69,9 +69,8 @@ export default function App() {
 
         <section className="section-shell" id="figures">
           <SectionTitle
-            description="Placeholder slots for future paper figures, research diagrams, and project visuals."
-            eyebrow="Selected Research Figures"
-            title="Visual material for papers and notes."
+            eyebrow="My Projects"
+            title="Research Work & Projects"
           />
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {researchFigures.map((figure) => (
@@ -89,9 +88,8 @@ export default function App() {
 
         <section className="section-shell" id="repositories">
           <SectionTitle
-            description="Placeholder repository cards for coursework, experiments, and project write-ups."
-            eyebrow="Featured Repositories"
-            title="Repos I want this homepage to surface clearly."
+            eyebrow="Related Repositories"
+            title="My Repos"
           />
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {featuredRepositories.map((repo) => (

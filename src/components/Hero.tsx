@@ -1,5 +1,4 @@
 import React from 'react'
-import moonImage from '../../assets/images/TodoEvolve.jpg'
 import { heroButtons, siteMeta } from '../data/siteData'
 import FadeIn from './FadeIn'
 import LinkButton from './LinkButton'
@@ -13,7 +12,14 @@ function Accent({ children }: { children: React.ReactNode }) {
 export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden">
-      <img alt="" className="hero-media absolute inset-0 h-full w-full object-cover object-center" src={moonImage} />
+      <video
+        className="hero-media absolute inset-0 h-full w-full object-cover object-center"
+        src="/blue_moon.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
       <div className="hero-overlay absolute inset-0" />
 
       <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[1440px] flex-col px-5 pb-10 pt-5 sm:px-6 md:px-10 lg:px-16">

@@ -85,7 +85,7 @@ export const researchUpdates = [
 export const researchFigures = [
   {
     imageSrc: todoEvolveImage,
-    title: 'TodoEvolve Overview Figure',
+    title: 'TodoEvolve',
     description:
       'Key visual from the TodoEvolve paper, used here as a representative research figure for the project and its overall system idea.',
     linkLabel: 'View paper',
@@ -93,17 +93,17 @@ export const researchFigures = [
   },
   {
     imageSrc: weiboImage,
-    title: 'Weibo Emotion Sort Figure',
+    title: 'Weibo Emotion Sort',
     description:
-      'Representative figure for the Weibo emotion analysis project, showing a place on the homepage for data-driven NLP or classification work.',
+      'A Python-based Weibo comment analysis tool that crawls comments, performs sentiment classification with the DeepSeek API, and generates visual reports such as pie charts and word clouds.',
     linkLabel: 'View repository',
     href: siteMeta.weiboEmotionRepoUrl,
   },
   {
     imageSrc: zhenaiImage,
-    title: 'Zhenai Analysis Figure',
+    title: 'Zhenai Analysis',
     description:
-      'Representative visual for the Zhenai analysis project, used here to surface another data-oriented repository with its own project image.',
+      'A Python-based data analysis system for Zhenai that crawls and studies matchmaking platform data to explore modern relationship preferences, user profiles, and social trends through visualization.',
     linkLabel: 'View repository',
     href: siteMeta.zhenaiAnalysisRepoUrl,
   },
@@ -120,15 +120,15 @@ export const featuredRepositories = [
   {
     name: 'Weibo_emotion_sort',
     description:
-      'A project around Weibo emotion sorting and analysis, now surfaced as one of the core repositories on the homepage.',
-    tags: ['Python', 'NLP', 'Data Analysis'],
+      'A Python tool for large-scale Weibo comment crawling and sentiment analysis, with DeepSeek-powered classification, pause/resume support, visual charts, word clouds, auto-update utilities, and a desktop-friendly GUI.',
+    tags: ['Python', 'DeepSeek API', 'Sentiment Analysis'],
     href: siteMeta.weiboEmotionRepoUrl,
   },
   {
     name: 'Zhenai_analysis',
     description:
-      'A repository focused on Zhenai-related analysis work, included as another real project instead of a placeholder card.',
-    tags: ['Python', 'Scraping', 'Analysis'],
+      'A Python-based Zhenai data analysis system that crawls user profiles, analyzes dating preferences, performs text sentiment analysis, and visualizes patterns such as age, height, region, profession, education, income, and lifestyle signals.',
+    tags: ['Python', 'Web Scraping', 'Data Visualization'],
     href: siteMeta.zhenaiAnalysisRepoUrl,
   },
 ]
