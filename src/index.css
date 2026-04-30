@@ -367,6 +367,29 @@ a {
   .theme-toggle-track.is-light .theme-toggle-thumb {
     transform: translateX(1.25rem);
   }
+
+  .typewriter-line {
+    display: inline-flex;
+    align-items: baseline;
+    min-height: 1.1em;
+  }
+
+  .typewriter-caret {
+    display: inline-block;
+    margin-left: 0.04em;
+    animation: caret-blink 1s steps(1) infinite;
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 900px) {

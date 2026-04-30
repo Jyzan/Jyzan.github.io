@@ -3,6 +3,7 @@ import { heroButtons, siteMeta } from '../data/siteData'
 import FadeIn from './FadeIn'
 import LinkButton from './LinkButton'
 import Navbar from './Navbar'
+import TypewriterText from './TypewriterText'
 
 interface HeroProps {
   theme: 'dark' | 'light'
@@ -27,7 +28,7 @@ export default function Hero({ theme, toggleTheme }: HeroProps) {
         />
 
         <main className="relative mt-3 flex flex-1 items-start overflow-hidden pb-10 pt-7 md:mt-4 md:pb-12 md:pt-8 lg:pb-14 lg:pt-10">
-          <div className="absolute bottom-0 left-6 right-2 top-0 overflow-hidden sm:left-8 sm:right-3 md:left-10 md:right-4 lg:left-12 lg:right-6">
+          <div className="absolute bottom-0 left-0 right-2 top-0 overflow-hidden sm:left-1 sm:right-3 md:left-2 md:right-4 lg:left-4 lg:right-6">
             <video
               className="hero-media absolute inset-0 h-full w-full object-cover object-[92%_46%]"
               src="/blue_moon.mp4"
@@ -48,7 +49,7 @@ export default function Hero({ theme, toggleTheme }: HeroProps) {
 
             <FadeIn delay={260} duration={800}>
               <h1 className="font-display text-[clamp(2.35rem,5vw,4.8rem)] font-extrabold leading-[0.97] tracking-[-0.04em] text-[color:var(--text-main)]">
-                <span className="block">Hi, I&apos;m {siteMeta.name}.</span>
+                <TypewriterText className="block" text={`Hi, I'm ${siteMeta.name}.`} />
                 <span className="block">Automation Undergraduate</span>
                 <span className="block">at Shanghai Jiao Tong University.</span>
               </h1>
