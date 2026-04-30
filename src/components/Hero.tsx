@@ -20,15 +20,17 @@ export default function Hero() {
         />
 
         <main className="relative mt-3 flex flex-1 items-start overflow-hidden pb-10 pt-7 md:mt-4 md:pb-12 md:pt-8 lg:pb-14 lg:pt-10">
-          <video
-            className="hero-media absolute bottom-0 left-2 right-2 top-0 h-full w-auto rounded-[24px] object-cover object-[72%_46%] sm:left-3 sm:right-3 md:left-4 md:right-4 lg:left-6 lg:right-6"
-            src="/blue_moon.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-          <div className="hero-overlay absolute bottom-0 left-2 right-2 top-0 rounded-[24px] sm:left-3 sm:right-3 md:left-4 md:right-4 lg:left-6 lg:right-6" />
+          <div className="absolute bottom-0 left-2 right-2 top-0 overflow-hidden sm:left-3 sm:right-3 md:left-4 md:right-4 lg:left-6 lg:right-6">
+            <video
+              className="hero-media absolute inset-0 h-full w-full object-cover object-[92%_46%]"
+              src="/blue_moon.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+            <div className="hero-overlay absolute inset-0" />
+          </div>
 
           <div id="about" className="relative z-10 max-w-[660px]">
             <FadeIn delay={150} duration={700}>
