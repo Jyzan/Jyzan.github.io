@@ -87,7 +87,7 @@ export const researchFigures = [
     imageSrc: todoEvolveImage,
     title: 'TodoEvolve',
     description:
-      'Key visual from the TodoEvolve paper, used here as a representative research figure for the project and its overall system idea.',
+      'A key figure from the TodoEvolve paper, which presents a framework for task-adaptive agentic planning across different planning targets, representations, and application domains.',
     linkLabel: 'View paper',
     href: siteMeta.todoEvolvePaperUrl,
   },
@@ -113,7 +113,7 @@ export const featuredRepositories = [
   {
     name: 'TodoEvolve',
     description:
-      'Repository for the TodoEvolve project, paired with the corresponding paper and research figure shown on this homepage.',
+      'The official implementation of TodoEvolve, a framework for task-adaptive agentic planning designed for diverse agent settings, planning structures, and long-horizon tasks.',
     tags: ['Research', 'AI', 'Agents'],
     href: siteMeta.todoEvolveRepoUrl,
   },

@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden">
       <video
-        className="hero-media absolute inset-0 h-full w-full object-cover object-center"
+        className="hero-media absolute inset-0 h-full w-full object-cover object-[58%_46%]"
         src="/blue_moon.mp4"
         autoPlay
         loop
@@ -30,8 +30,8 @@ export default function Hero() {
           youtubeUrl={siteMeta.youtubeUrl}
         />
 
-        <main className="grid flex-1 items-center gap-10 pt-14 md:pt-20 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,460px)] lg:gap-20 lg:pt-24">
-          <div id="about" className="max-w-[700px]">
+        <main className="grid flex-1 items-center gap-10 pt-14 md:pt-20 lg:grid-cols-[minmax(0,1fr)_minmax(340px,420px)] lg:gap-16 lg:pt-24">
+          <div id="about" className="max-w-[660px]">
             <FadeIn delay={150} duration={700}>
               <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-[color:var(--text-muted)]">
                 Personal Homepage
@@ -39,7 +39,7 @@ export default function Hero() {
             </FadeIn>
 
             <FadeIn delay={260} duration={800}>
-              <h1 className="font-display text-[clamp(2.8rem,6vw,5.8rem)] font-extrabold leading-[0.95] tracking-[-0.04em] text-[color:var(--text-main)]">
+              <h1 className="font-display text-[clamp(2.35rem,5vw,4.8rem)] font-extrabold leading-[0.97] tracking-[-0.04em] text-[color:var(--text-main)]">
                 <span className="block">Hi, I&apos;m {siteMeta.name}.</span>
                 <span className="block">Automation Undergraduate</span>
                 <span className="block">at Shanghai Jiao Tong University.</span>
@@ -81,7 +81,7 @@ export default function Hero() {
             </FadeIn>
           </div>
 
-          <div className="flex justify-start lg:justify-end lg:pt-24">
+          <div className="flex justify-start lg:justify-end lg:pt-16">
             <FadeIn delay={680} duration={950}>
               <ProfileCard
                 email={siteMeta.email}
