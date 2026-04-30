@@ -11,16 +11,6 @@ function Accent({ children }: { children: React.ReactNode }) {
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[linear-gradient(180deg,#020617_0%,#051321_100%)]">
-      <video
-        className="hero-media absolute inset-0 h-full w-full object-cover object-[72%_46%]"
-        src="/blue_moon.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-      <div className="hero-overlay absolute inset-0" />
-
       <div className="relative z-10 mx-auto flex min-h-[84vh] w-full max-w-[1440px] flex-col px-5 pb-4 pt-5 sm:px-6 md:px-10 lg:px-16">
         <Navbar
           email={siteMeta.email}
@@ -29,8 +19,18 @@ export default function Hero() {
           youtubeUrl={siteMeta.youtubeUrl}
         />
 
-        <main className="flex flex-1 items-start pt-6 md:pt-8 lg:pt-10">
-          <div id="about" className="max-w-[660px]">
+        <main className="relative mt-3 flex flex-1 items-start overflow-hidden pb-10 pt-7 md:mt-4 md:pb-12 md:pt-8 lg:pb-14 lg:pt-10">
+          <video
+            className="hero-media absolute bottom-0 left-2 right-2 top-0 h-full w-auto rounded-[24px] object-cover object-[72%_46%] sm:left-3 sm:right-3 md:left-4 md:right-4 lg:left-6 lg:right-6"
+            src="/blue_moon.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+          <div className="hero-overlay absolute bottom-0 left-2 right-2 top-0 rounded-[24px] sm:left-3 sm:right-3 md:left-4 md:right-4 lg:left-6 lg:right-6" />
+
+          <div id="about" className="relative z-10 max-w-[660px]">
             <FadeIn delay={150} duration={700}>
               <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-[color:var(--text-muted)]">
                 Personal Homepage
