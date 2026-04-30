@@ -32,8 +32,8 @@ export default function Hero({ theme, toggleTheme }: HeroProps) {
         <main className="relative mt-3 flex flex-1 items-start overflow-hidden pb-10 pt-7 md:mt-4 md:pb-12 md:pt-8 lg:pb-14 lg:pt-10">
           <div className="absolute bottom-0 left-0 right-2 top-0 overflow-hidden sm:left-0 sm:right-3 md:left-0 md:right-4 lg:-left-4 lg:right-6">
             <video
-              className={`hero-media absolute inset-0 h-full w-full object-cover object-[92%_46%] ${
-                theme === 'light' ? 'hero-media-light object-[78%_46%]' : ''
+              className={`hero-media absolute inset-0 h-full w-full object-cover object-[84%_46%] ${
+                theme === 'light' ? 'hero-media-light object-[70%_46%]' : ''
               }`}
               src={heroVideoSrc}
               autoPlay
