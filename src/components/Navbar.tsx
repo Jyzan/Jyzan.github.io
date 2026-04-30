@@ -3,10 +3,11 @@ import React from 'react'
 interface NavbarProps {
   email: string
   githubUrl: string
+  openReviewUrl: string
   youtubeUrl: string
 }
 
-export default function Navbar({ email, githubUrl, youtubeUrl }: NavbarProps) {
+export default function Navbar({ email, githubUrl, openReviewUrl, youtubeUrl }: NavbarProps) {
   return (
     <header className="glass-nav sticky top-4 z-20 h-16 rounded-[22px] px-4 sm:px-5">
       <div className="flex h-full items-center justify-between gap-4">
@@ -20,6 +21,9 @@ export default function Navbar({ email, githubUrl, youtubeUrl }: NavbarProps) {
           </a>
           <a className="nav-link" href={youtubeUrl} target="_blank" rel="noreferrer">
             YouTube
+          </a>
+          <a className="nav-link" href={openReviewUrl} target="_blank" rel="noreferrer">
+            OpenReview
           </a>
           <a className="nav-link" href={githubUrl} target="_blank" rel="noreferrer">
             GitHub

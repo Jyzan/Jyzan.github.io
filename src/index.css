@@ -45,13 +45,19 @@ a {
 
   .hero-overlay {
     background:
+      radial-gradient(circle at 63% 28%, rgba(125, 211, 252, 0.18) 0%, rgba(125, 211, 252, 0.07) 18%, rgba(125, 211, 252, 0) 34%),
+      radial-gradient(circle at 72% 68%, rgba(2, 6, 23, 0.46) 0%, rgba(2, 6, 23, 0.3) 22%, rgba(2, 6, 23, 0) 44%),
       linear-gradient(
         90deg,
-        rgba(0, 0, 0, 0.78) 0%,
-        rgba(0, 20, 35, 0.45) 45%,
-        rgba(0, 0, 0, 0.72) 100%
+        rgba(0, 0, 0, 0.64) 0%,
+        rgba(0, 12, 24, 0.32) 42%,
+        rgba(0, 0, 0, 0.52) 100%
       ),
-      linear-gradient(180deg, rgba(2, 6, 23, 0.2) 0%, rgba(2, 6, 23, 0.68) 100%);
+      linear-gradient(180deg, rgba(2, 6, 23, 0.16) 0%, rgba(2, 6, 23, 0.58) 100%);
+  }
+
+  .hero-media {
+    filter: brightness(1.18) contrast(1.05) saturate(1.08);
   }
 
   .glass-nav {
@@ -163,6 +169,14 @@ a {
     color: var(--text-main);
   }
 
+  .section-description {
+    margin-top: 1.25rem;
+    max-width: 760px;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text-muted);
+  }
+
   .section-copy {
     margin-top: 1.5rem;
     max-width: 760px;
@@ -196,6 +210,68 @@ a {
     border-color: rgba(125, 211, 252, 0.42);
     color: var(--accent);
   }
+
+  .link-card {
+    border-radius: 16px;
+    border: 1px solid rgba(148, 211, 255, 0.18);
+    background: rgba(8, 25, 40, 0.42);
+    padding: 0.9rem 1rem;
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+  }
+
+  .link-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(125, 211, 252, 0.42);
+    background: rgba(12, 30, 48, 0.62);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 2.2rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0.65rem;
+    top: 0;
+    bottom: -1.25rem;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(125, 211, 252, 0.45), rgba(125, 211, 252, 0.05));
+  }
+
+  .timeline-item:last-child::before {
+    bottom: 1.5rem;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 1.4rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(148, 211, 255, 0.48);
+    background: radial-gradient(circle, rgba(125, 211, 252, 0.95) 0%, rgba(125, 211, 252, 0.28) 46%, rgba(2, 6, 23, 0.2) 100%);
+    box-shadow: 0 0 24px rgba(125, 211, 252, 0.22);
+  }
+
+  .figure-placeholder {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(148, 211, 255, 0.16);
+  }
+
+  .tag-chip {
+    border-radius: 9999px;
+    border: 1px solid rgba(148, 211, 255, 0.18);
+    background: rgba(125, 211, 252, 0.08);
+    padding: 0.4rem 0.7rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-main);
+  }
 }
 
 @media (max-width: 900px) {
@@ -205,5 +281,19 @@ a {
 
   .glass-card {
     padding: 1.4rem;
+  }
+
+  .timeline-item {
+    padding-left: 1.8rem;
+  }
+
+  .timeline-item::before {
+    left: 0.52rem;
+  }
+
+  .timeline-marker {
+    top: 1.3rem;
+    height: 1rem;
+    width: 1rem;
   }
 }

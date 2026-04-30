@@ -1,13 +1,10 @@
 import React from 'react'
+import moonImage from '../../assets/images/TodoEvolve.jpg'
+import { heroButtons, siteMeta } from '../data/siteData'
 import FadeIn from './FadeIn'
+import LinkButton from './LinkButton'
 import Navbar from './Navbar'
 import ProfileCard from './ProfileCard'
-
-const githubUrl = 'https://github.com/Jyzan'
-const youtubeUrl = 'https://www.youtube.com/@ManCITEA'
-const email = 'jyz366200@gmail.com'
-const qqMail = '3821355430@qq.com'
-const schoolUrl = 'https://www.sjtu.edu.cn/'
 
 function Accent({ children }: { children: React.ReactNode }) {
   return <span className="text-[color:var(--accent)]">{children}</span>
@@ -16,18 +13,16 @@ function Accent({ children }: { children: React.ReactNode }) {
 export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden">
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        src="/blue_moon.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+      <img alt="" className="hero-media absolute inset-0 h-full w-full object-cover object-center" src={moonImage} />
       <div className="hero-overlay absolute inset-0" />
 
       <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[1440px] flex-col px-5 pb-10 pt-5 sm:px-6 md:px-10 lg:px-16">
-        <Navbar email={email} githubUrl={githubUrl} youtubeUrl={youtubeUrl} />
+        <Navbar
+          email={siteMeta.email}
+          githubUrl={siteMeta.githubUrl}
+          openReviewUrl={siteMeta.openReviewUrl}
+          youtubeUrl={siteMeta.youtubeUrl}
+        />
 
         <main className="grid flex-1 items-center gap-10 pt-14 md:pt-20 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,460px)] lg:gap-20 lg:pt-24">
           <div id="about" className="max-w-[700px]">
@@ -39,7 +34,7 @@ export default function Hero() {
 
             <FadeIn delay={260} duration={800}>
               <h1 className="font-display text-[clamp(2.8rem,6vw,5.8rem)] font-extrabold leading-[0.95] tracking-[-0.04em] text-[color:var(--text-main)]">
-                <span className="block">Hi, I&apos;m Jyzan.</span>
+                <span className="block">Hi, I&apos;m {siteMeta.name}.</span>
                 <span className="block">Automation Undergraduate</span>
                 <span className="block">at Shanghai Jiao Tong University.</span>
               </h1>
@@ -51,7 +46,7 @@ export default function Hero() {
                   I&apos;m an undergraduate student at{' '}
                   <a
                     className="font-semibold text-[color:var(--accent)] transition hover:text-[color:var(--accent-strong)]"
-                    href={schoolUrl}
+                    href={siteMeta.schoolUrl}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -67,28 +62,28 @@ export default function Hero() {
             </FadeIn>
 
             <FadeIn delay={560} duration={900} className="mt-9 flex flex-wrap gap-4">
-              <a
-                className="primary-button"
-                href={youtubeUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                YouTube Channel
-              </a>
-              <a
-                className="secondary-button"
-                href={githubUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Contact Me
-              </a>
+              {heroButtons.map((button) => (
+                <LinkButton
+                  key={button.label}
+                  className={button.label === 'Blog' ? 'min-w-[118px]' : ''}
+                  external={button.external}
+                  href={button.href}
+                  label={button.label}
+                  variant={button.variant}
+                />
+              ))}
             </FadeIn>
           </div>
 
           <div className="flex justify-start lg:justify-end lg:pt-24">
             <FadeIn delay={680} duration={950}>
-              <ProfileCard email={email} qqMail={qqMail} schoolUrl={schoolUrl} youtubeUrl={youtubeUrl} />
+              <ProfileCard
+                email={siteMeta.email}
+                openReviewUrl={siteMeta.openReviewUrl}
+                qqMail={siteMeta.qqMail}
+                schoolUrl={siteMeta.schoolUrl}
+                youtubeUrl={siteMeta.youtubeUrl}
+              />
             </FadeIn>
           </div>
         </main>

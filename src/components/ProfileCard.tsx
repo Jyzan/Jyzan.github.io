@@ -1,7 +1,9 @@
 import React from 'react'
+import { quickLinks } from '../data/siteData'
 
 interface ProfileCardProps {
   email: string
+  openReviewUrl: string
   qqMail: string
   schoolUrl: string
   youtubeUrl: string
@@ -27,7 +29,7 @@ function Item({ label, value, href }: { label: string; value: string; href?: str
   )
 }
 
-export default function ProfileCard({ email, qqMail, schoolUrl, youtubeUrl }: ProfileCardProps) {
+export default function ProfileCard({ email, openReviewUrl, qqMail, schoolUrl, youtubeUrl }: ProfileCardProps) {
   return (
     <aside className="glass-card w-full max-w-[460px]" id="contact">
       <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--text-muted)]">
@@ -46,7 +48,9 @@ export default function ProfileCard({ email, qqMail, schoolUrl, youtubeUrl }: Pr
 
         <section className="space-y-3 border-t border-white/10 pt-6">
           <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--accent)]">Research</h3>
-          <p className="text-sm leading-7 text-[color:var(--text-main)]">Embodied intelligence and AI agents</p>
+          <p className="text-sm leading-7 text-[color:var(--text-main)]">
+            Embodied intelligence, AI agents, and multimodal interaction
+          </p>
         </section>
 
         <section className="space-y-3 border-t border-white/10 pt-6">
@@ -54,6 +58,26 @@ export default function ProfileCard({ email, qqMail, schoolUrl, youtubeUrl }: Pr
           <Item label="Email" value={email} href={`mailto:${email}`} />
           <Item label="QQ" value={qqMail} href={`mailto:${qqMail}`} />
           <Item label="YouTube" value="@ManCITEA" href={youtubeUrl} />
+        </section>
+
+        <section className="space-y-3 border-t border-white/10 pt-6">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--accent)]">Links</h3>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {quickLinks.map((link) => (
+              <a
+                key={link.label}
+                className="link-card"
+                href={link.label === 'OpenReview' ? openReviewUrl : link.href}
+                target={link.href.startsWith('#') ? undefined : '_blank'}
+                rel={link.href.startsWith('#') ? undefined : 'noreferrer'}
+              >
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--text-muted)]">
+                  {link.label}
+                </span>
+                <span className="mt-2 block text-sm text-[color:var(--text-main)]">{link.value}</span>
+              </a>
+            ))}
+          </div>
         </section>
       </div>
     </aside>
