@@ -34,8 +34,6 @@ export default function App() {
     <div className="min-h-screen bg-[color:var(--bg)] text-[color:var(--text-main)]" data-theme={theme}>
       <Hero theme={theme} toggleTheme={() => setTheme(theme === 'dark' ? 'light' : 'dark')} />
       <div className="relative overflow-hidden" style={{ background: 'var(--page-section-bg)' }}>
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-32" style={{ background: 'var(--page-section-top-fade)' }} />
-
         <section className="section-shell">
           <SectionTitle
             description="I study Automation at Shanghai Jiao Tong University and care about research directions that connect intelligent reasoning with action in the real world."

@@ -13,6 +13,8 @@
   --accent-strong: #38bdf8;
   --button-bg: #ffffff;
   --button-text: #020617;
+  --secondary-button-bg: rgba(8, 25, 40, 0.42);
+  --secondary-button-border: rgba(148, 211, 255, 0.28);
   --page-section-bg: radial-gradient(circle at top, rgba(19, 60, 92, 0.32), transparent 42%), linear-gradient(180deg, #03111d 0%, #020617 100%);
   --page-section-top-fade: linear-gradient(180deg, #020617 0%, rgba(2, 6, 23, 0.7) 55%, transparent 100%);
   --nav-bg: rgba(10, 26, 43, 0.52);
@@ -39,6 +41,8 @@
   --accent-strong: #0369a1;
   --button-bg: #0f172a;
   --button-text: #f8fafc;
+  --secondary-button-bg: rgba(255, 255, 255, 0.58);
+  --secondary-button-border: rgba(15, 23, 42, 0.12);
   --page-section-bg: radial-gradient(circle at top, rgba(125, 211, 252, 0.34), transparent 42%), linear-gradient(180deg, #edf6ff 0%, #dceeff 100%);
   --page-section-top-fade: linear-gradient(180deg, #eef6ff 0%, rgba(238, 246, 255, 0.72) 55%, transparent 100%);
   --nav-bg: rgba(255, 255, 255, 0.62);
@@ -100,6 +104,21 @@ a {
   .hero-media {
     filter: brightness(1.2) contrast(1.07) saturate(1.1);
     transform: scale(0.96);
+  }
+
+  .hero-media-light {
+    filter: brightness(0.98) contrast(1.02) saturate(0.96);
+  }
+
+  .hero-overlay-light {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(248, 250, 252, 0.72) 0%,
+        rgba(248, 250, 252, 0.24) 34%,
+        rgba(255, 255, 255, 0.1) 100%
+      ),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%);
   }
 
   .glass-nav {
@@ -175,8 +194,8 @@ a {
   }
 
   .secondary-button {
-    background: rgba(8, 25, 40, 0.42);
-    border: 1px solid rgba(148, 211, 255, 0.28);
+    background: var(--secondary-button-bg);
+    border: 1px solid var(--secondary-button-border);
     color: var(--text-main);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(14px);

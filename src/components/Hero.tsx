@@ -15,6 +15,8 @@ function Accent({ children }: { children: React.ReactNode }) {
 }
 
 export default function Hero({ theme, toggleTheme }: HeroProps) {
+  const heroVideoSrc = theme === 'dark' ? '/blue_moon.mp4' : '/forest.mp4'
+
   return (
     <section className="relative overflow-hidden" style={{ background: 'var(--hero-shell-bg)' }}>
       <div className="relative z-10 mx-auto flex min-h-[84vh] w-full max-w-[1440px] flex-col px-5 pb-4 pt-5 sm:px-6 md:px-10 lg:px-16">
@@ -28,19 +30,19 @@ export default function Hero({ theme, toggleTheme }: HeroProps) {
         />
 
         <main className="relative mt-3 flex flex-1 items-start overflow-hidden pb-10 pt-7 md:mt-4 md:pb-12 md:pt-8 lg:pb-14 lg:pt-10">
-          {theme === 'dark' ? (
-            <div className="absolute bottom-0 left-0 right-2 top-0 overflow-hidden sm:left-0 sm:right-3 md:left-0 md:right-4 lg:-left-2 lg:right-6">
-              <video
-                className="hero-media absolute inset-0 h-full w-full object-cover object-[92%_46%]"
-                src="/blue_moon.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-              />
-              <div className="hero-overlay absolute inset-0" />
-            </div>
-          ) : null}
+          <div className="absolute bottom-0 left-0 right-2 top-0 overflow-hidden sm:left-0 sm:right-3 md:left-0 md:right-4 lg:-left-4 lg:right-6">
+            <video
+              className={`hero-media absolute inset-0 h-full w-full object-cover object-[92%_46%] ${
+                theme === 'light' ? 'hero-media-light object-[88%_46%]' : ''
+              }`}
+              src={heroVideoSrc}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+            <div className={`hero-overlay absolute inset-0 ${theme === 'light' ? 'hero-overlay-light' : ''}`} />
+          </div>
 
           <div id="about" className="relative z-10 max-w-[660px]">
             <FadeIn delay={150} duration={700}>
