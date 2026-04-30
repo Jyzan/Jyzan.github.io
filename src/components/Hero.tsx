@@ -44,7 +44,7 @@ export default function Hero({ theme, toggleTheme }: HeroProps) {
             <div className={`hero-overlay absolute inset-0 ${theme === 'light' ? 'hero-overlay-light' : ''}`} />
           </div>
 
-          <div id="about" className="relative z-10 max-w-[660px] lg:ml-[8%]">
+          <div id="about" className="relative z-10 max-w-[660px] lg:ml-[4%]">
             <FadeIn delay={150} duration={700}>
               <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-[color:var(--text-muted)]">
                 Personal Homepage
