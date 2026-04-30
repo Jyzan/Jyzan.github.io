@@ -4,10 +4,12 @@ interface NavbarProps {
   email: string
   githubUrl: string
   openReviewUrl: string
+  theme: 'dark' | 'light'
+  toggleTheme: () => void
   youtubeUrl: string
 }
 
-export default function Navbar({ email, githubUrl, openReviewUrl, youtubeUrl }: NavbarProps) {
+export default function Navbar({ email, githubUrl, openReviewUrl, theme, toggleTheme, youtubeUrl }: NavbarProps) {
   return (
     <header className="glass-nav sticky top-4 z-20 h-16 rounded-[22px] px-4 sm:px-5">
       <div className="flex h-full items-center justify-between gap-4">
@@ -33,14 +35,18 @@ export default function Navbar({ email, githubUrl, openReviewUrl, youtubeUrl }: 
           </a>
         </nav>
 
-        <a
-          className="primary-button px-4 py-2 text-sm sm:px-6"
-          href={githubUrl}
-          target="_blank"
-          rel="noreferrer"
+        <button
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          aria-pressed={theme === 'light'}
+          className="theme-toggle"
+          onClick={toggleTheme}
+          type="button"
         >
-          GitHub Profile
-        </a>
+          <span className="theme-toggle-label">{theme === 'dark' ? 'Dark' : 'Light'}</span>
+          <span className={`theme-toggle-track ${theme === 'light' ? 'is-light' : ''}`}>
+            <span className="theme-toggle-thumb" />
+          </span>
+        </button>
       </div>
     </header>
   )

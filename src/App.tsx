@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Hero from './components/Hero'
 import BlogCard from './components/BlogCard'
 import FigureCard from './components/FigureCard'
@@ -17,11 +17,24 @@ import {
 } from './data/siteData'
 
 export default function App() {
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    if (typeof window === 'undefined') {
+      return 'dark'
+    }
+
+    const storedTheme = window.localStorage.getItem('theme')
+    return storedTheme === 'light' ? 'light' : 'dark'
+  })
+
+  useEffect(() => {
+    window.localStorage.setItem('theme', theme)
+  }, [theme])
+
   return (
-    <div className="min-h-screen bg-[color:var(--bg)] text-[color:var(--text-main)]">
-      <Hero />
-      <div className="relative overflow-hidden bg-[radial-gradient(circle_at_top,rgba(19,60,92,0.32),transparent_42%),linear-gradient(180deg,#03111d_0%,#020617_100%)]">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#020617] via-[#020617]/70 to-transparent" />
+    <div className="min-h-screen bg-[color:var(--bg)] text-[color:var(--text-main)]" data-theme={theme}>
+      <Hero theme={theme} toggleTheme={() => setTheme(theme === 'dark' ? 'light' : 'dark')} />
+      <div className="relative overflow-hidden" style={{ background: 'var(--page-section-bg)' }}>
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-32" style={{ background: 'var(--page-section-top-fade)' }} />
 
         <section className="section-shell">
           <SectionTitle

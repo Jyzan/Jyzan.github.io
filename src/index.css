@@ -4,6 +4,7 @@
 
 :root{
   --bg: #020617;
+  --hero-shell-bg: linear-gradient(180deg, #020617 0%, #051321 100%);
   --panel: rgba(8, 25, 40, 0.58);
   --panel-border: rgba(148, 211, 255, 0.28);
   --text-main: rgba(255, 255, 255, 0.96);
@@ -12,6 +13,45 @@
   --accent-strong: #38bdf8;
   --button-bg: #ffffff;
   --button-text: #020617;
+  --page-section-bg: radial-gradient(circle at top, rgba(19, 60, 92, 0.32), transparent 42%), linear-gradient(180deg, #03111d 0%, #020617 100%);
+  --page-section-top-fade: linear-gradient(180deg, #020617 0%, rgba(2, 6, 23, 0.7) 55%, transparent 100%);
+  --nav-bg: rgba(10, 26, 43, 0.52);
+  --nav-border: rgba(148, 211, 255, 0.18);
+  --card-bg: rgba(8, 25, 40, 0.55);
+  --card-shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+  --content-card-bg: linear-gradient(180deg, rgba(11, 29, 46, 0.8), rgba(5, 16, 28, 0.7));
+  --chip-bg: rgba(8, 25, 40, 0.45);
+  --chip-border: rgba(148, 211, 255, 0.18);
+  --link-card-bg: rgba(8, 25, 40, 0.42);
+  --toggle-bg: rgba(8, 25, 40, 0.62);
+  --toggle-track: rgba(255, 255, 255, 0.18);
+  --toggle-thumb: #ffffff;
+}
+
+[data-theme='light'] {
+  --bg: #eef6ff;
+  --hero-shell-bg: linear-gradient(180deg, #eef6ff 0%, #dcecfb 100%);
+  --panel: rgba(255, 255, 255, 0.72);
+  --panel-border: rgba(56, 189, 248, 0.24);
+  --text-main: rgba(15, 23, 42, 0.96);
+  --text-muted: rgba(51, 65, 85, 0.82);
+  --accent: #0284c7;
+  --accent-strong: #0369a1;
+  --button-bg: #0f172a;
+  --button-text: #f8fafc;
+  --page-section-bg: radial-gradient(circle at top, rgba(125, 211, 252, 0.34), transparent 42%), linear-gradient(180deg, #edf6ff 0%, #dceeff 100%);
+  --page-section-top-fade: linear-gradient(180deg, #eef6ff 0%, rgba(238, 246, 255, 0.72) 55%, transparent 100%);
+  --nav-bg: rgba(255, 255, 255, 0.62);
+  --nav-border: rgba(56, 189, 248, 0.22);
+  --card-bg: rgba(255, 255, 255, 0.62);
+  --card-shadow: 0 18px 44px rgba(2, 132, 199, 0.12);
+  --content-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(232, 243, 252, 0.78));
+  --chip-bg: rgba(255, 255, 255, 0.74);
+  --chip-border: rgba(56, 189, 248, 0.22);
+  --link-card-bg: rgba(255, 255, 255, 0.7);
+  --toggle-bg: rgba(255, 255, 255, 0.72);
+  --toggle-track: rgba(14, 165, 233, 0.18);
+  --toggle-thumb: #0f172a;
 }
 
 html,body,#root{
@@ -28,6 +68,7 @@ body{
   -moz-osx-font-smoothing: grayscale;
   background: var(--bg);
   color: var(--text-main);
+  transition: background-color 220ms ease, color 220ms ease;
 }
 
 * {
@@ -62,8 +103,8 @@ a {
   }
 
   .glass-nav {
-    background: rgba(10, 26, 43, 0.52);
-    border: 1px solid rgba(148, 211, 255, 0.18);
+    background: var(--nav-bg);
+    border: 1px solid var(--nav-border);
     box-shadow:
       0 10px 30px rgba(0, 0, 0, 0.22),
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
@@ -75,10 +116,10 @@ a {
     position: relative;
     overflow: hidden;
     border-radius: 24px;
-    background: rgba(8, 25, 40, 0.55);
+    background: var(--card-bg);
     border: 1px solid rgba(148, 211, 255, 0.28);
     box-shadow:
-      0 24px 80px rgba(0, 0, 0, 0.38),
+      var(--card-shadow),
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
@@ -195,7 +236,7 @@ a {
   .content-card {
     border-radius: 24px;
     border: 1px solid rgba(148, 211, 255, 0.18);
-    background: linear-gradient(180deg, rgba(11, 29, 46, 0.8), rgba(5, 16, 28, 0.7));
+    background: var(--content-card-bg);
     box-shadow:
       0 20px 60px rgba(0, 0, 0, 0.22),
       inset 0 1px 0 rgba(255, 255, 255, 0.04);
@@ -204,8 +245,8 @@ a {
 
   .contact-chip {
     border-radius: 16px;
-    border: 1px solid rgba(148, 211, 255, 0.18);
-    background: rgba(8, 25, 40, 0.45);
+    border: 1px solid var(--chip-border);
+    background: var(--chip-bg);
     padding: 0.9rem 1rem;
     transition: border-color 180ms ease, transform 180ms ease, color 180ms ease;
   }
@@ -218,8 +259,8 @@ a {
 
   .link-card {
     border-radius: 16px;
-    border: 1px solid rgba(148, 211, 255, 0.18);
-    background: rgba(8, 25, 40, 0.42);
+    border: 1px solid var(--chip-border);
+    background: var(--link-card-bg);
     padding: 0.72rem 0.85rem;
     transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
   }
@@ -276,6 +317,55 @@ a {
     font-size: 0.78rem;
     font-weight: 600;
     color: var(--text-main);
+  }
+
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid var(--nav-border);
+    background: var(--toggle-bg);
+    padding: 0.45rem 0.55rem 0.45rem 0.9rem;
+    color: var(--text-main);
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+  }
+
+  .theme-toggle:hover {
+    transform: translateY(-1px);
+    border-color: rgba(125, 211, 252, 0.38);
+  }
+
+  .theme-toggle-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .theme-toggle-track {
+    display: inline-flex;
+    align-items: center;
+    width: 3rem;
+    height: 1.7rem;
+    padding: 0.15rem;
+    border-radius: 9999px;
+    background: var(--toggle-track);
+    transition: background-color 180ms ease;
+  }
+
+  .theme-toggle-thumb {
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 9999px;
+    background: var(--toggle-thumb);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    transform: translateX(0);
+    transition: transform 180ms ease, background-color 180ms ease;
+  }
+
+  .theme-toggle-track.is-light .theme-toggle-thumb {
+    transform: translateX(1.25rem);
   }
 }
 
