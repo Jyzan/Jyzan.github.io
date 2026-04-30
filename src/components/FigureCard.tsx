@@ -1,18 +1,18 @@
 import React from 'react'
-import figureImage from '../../assets/images/TodoEvolve.jpg'
 
 interface FigureCardProps {
   title: string
   description: string
+  imageSrc: string
   href?: string
   linkLabel?: string
 }
 
-export default function FigureCard({ title, description, href, linkLabel }: FigureCardProps) {
+export default function FigureCard({ title, description, imageSrc, href, linkLabel }: FigureCardProps) {
   return (
     <article className="content-card h-full overflow-hidden p-0">
       <div className="figure-placeholder">
-        <img alt={title} className="h-full w-full object-cover" src={figureImage} />
+        <img alt={title} className="h-full w-full object-cover" src={imageSrc} />
         <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/20 to-transparent" />
       </div>
       <div className="p-6">

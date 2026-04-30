@@ -79,6 +79,7 @@ export default function App() {
                 key={figure.title}
                 description={figure.description}
                 href={figure.href}
+                imageSrc={figure.imageSrc}
                 linkLabel={figure.linkLabel}
                 title={figure.title}
               />

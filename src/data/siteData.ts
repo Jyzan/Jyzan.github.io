@@ -1,3 +1,7 @@
+import todoEvolveImage from '../../assets/images/TodoEvolve.jpg'
+import weiboImage from '../../assets/images/weibo.jpg'
+import zhenaiImage from '../../assets/images/zhenai.jpg'
+
 export const siteMeta = {
   name: 'Jyzan',
   identity: 'Undergraduate student at Shanghai Jiao Tong University',
@@ -9,6 +13,10 @@ export const siteMeta = {
   email: 'jyz366200@gmail.com',
   qqMail: '3821355430@qq.com',
   openReviewUrl: 'https://openreview.net/profile?id=%7EYanzuo_Jiang1',
+  todoEvolveRepoUrl: 'https://github.com/Jyzan/TodoEvolve',
+  todoEvolvePaperUrl: 'https://arxiv.org/abs/2602.07839',
+  weiboEmotionRepoUrl: 'https://github.com/Jyzan/Weibo_emotion_sort',
+  zhenaiAnalysisRepoUrl: 'https://github.com/Jyzan/Zhenai_analysis',
   blogUrl: '#blog',
 } as const
 
@@ -76,43 +84,52 @@ export const researchUpdates = [
 
 export const researchFigures = [
   {
-    title: 'Agent Workflow Sketch',
-    description: 'A placeholder for diagrams that explain agent loops, memory, tools, or embodied decision pipelines.',
-    linkLabel: 'Paper link',
-    href: siteMeta.openReviewUrl,
+    imageSrc: todoEvolveImage,
+    title: 'TodoEvolve Overview Figure',
+    description:
+      'Key visual from the TodoEvolve paper, used here as a representative research figure for the project and its overall system idea.',
+    linkLabel: 'View paper',
+    href: siteMeta.todoEvolvePaperUrl,
   },
   {
-    title: 'Perception and Action Figure',
-    description: 'A placeholder for visuals about multimodal perception, robotic action, or environment-grounded reasoning.',
-    linkLabel: 'Project link',
-    href: siteMeta.githubUrl,
+    imageSrc: weiboImage,
+    title: 'Weibo Emotion Sort Figure',
+    description:
+      'Representative figure for the Weibo emotion analysis project, showing a place on the homepage for data-driven NLP or classification work.',
+    linkLabel: 'View repository',
+    href: siteMeta.weiboEmotionRepoUrl,
   },
   {
-    title: 'Research Note Snapshot',
-    description: 'A placeholder for screenshots, paper figures, or concept illustrations that support current reading notes.',
-    linkLabel: 'Blog link',
-    href: siteMeta.blogUrl,
+    imageSrc: zhenaiImage,
+    title: 'Zhenai Analysis Figure',
+    description:
+      'Representative visual for the Zhenai analysis project, used here to surface another data-oriented repository with its own project image.',
+    linkLabel: 'View repository',
+    href: siteMeta.zhenaiAnalysisRepoUrl,
   },
 ]
 
 export const featuredRepositories = [
   {
-    name: 'embedded-systems-labs',
-    description: 'Course and lab work around hardware-software integration, experimentation, and engineering fundamentals.',
-    tags: ['C/C++', 'MCU', 'Embedded'],
-    href: siteMeta.githubUrl,
+    name: 'TodoEvolve',
+    description:
+      'Repository for the TodoEvolve project, paired with the corresponding paper and research figure shown on this homepage.',
+    tags: ['Research', 'AI', 'Agents'],
+    href: siteMeta.todoEvolveRepoUrl,
   },
   {
-    name: 'image-processing-projects',
-    description: 'Experiments in visual computing, perception pipelines, and algorithmic image analysis.',
-    tags: ['Python', 'OpenCV', 'Vision'],
-    href: siteMeta.githubUrl,
+    name: 'Weibo_emotion_sort',
+    description:
+      'A project around Weibo emotion sorting and analysis, now surfaced as one of the core repositories on the homepage.',
+    tags: ['Python', 'NLP', 'Data Analysis'],
+    href: siteMeta.weiboEmotionRepoUrl,
   },
   {
-    name: 'motor-control-hmi',
-    description: 'Projects around motor control logic, interface design, and translating system behavior into usable tools.',
-    tags: ['Control', 'HMI', 'Automation'],
-    href: siteMeta.githubUrl,
+    name: 'Zhenai_analysis',
+    description:
+      'A repository focused on Zhenai-related analysis work, included as another real project instead of a placeholder card.',
+    tags: ['Python', 'Scraping', 'Analysis'],
+    href: siteMeta.zhenaiAnalysisRepoUrl,
   },
 ]
 
