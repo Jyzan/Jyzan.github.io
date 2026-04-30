@@ -1,129 +1,98 @@
 import React from 'react'
-import AnimatedHeading from './AnimatedHeading'
 import FadeIn from './FadeIn'
+import Navbar from './Navbar'
+import ProfileCard from './ProfileCard'
+
+const githubUrl = 'https://github.com/Jyzan'
+const youtubeUrl = 'https://www.youtube.com/@ManCITEA'
+const email = 'jyz366200@gmail.com'
+const qqMail = '3821355430@qq.com'
+const schoolUrl = 'https://www.sjtu.edu.cn/'
+
+function Accent({ children }: { children: React.ReactNode }) {
+  return <span className="text-[color:var(--accent)]">{children}</span>
+}
 
 export default function Hero() {
-  const heading = 'Hi, I am Jyzan.\nAutomation undergraduate.'
-  const githubUrl = 'https://github.com/Jyzan'
-  const youtubeUrl = 'https://www.youtube.com/@ManCITEA'
-  const email = 'jyz366200@gmail.com'
-  const qqMail = '3821355430@qq.com'
-  const schoolUrl = 'https://www.sjtu.edu.cn/'
-
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden">
       <video
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover"
         src="/blue_moon.mp4"
         autoPlay
         loop
         muted
         playsInline
       />
+      <div className="hero-overlay absolute inset-0" />
 
-      <header className="relative z-10 px-6 md:px-12 lg:px-16 pt-6">
-        <div className="liquid-glass rounded-xl px-4 py-2 flex items-center justify-between">
-          <div className="text-2xl font-semibold tracking-tight">Jyzan</div>
-          <nav className="hidden md:flex gap-8 text-sm text-gray-200">
-            <a className="hover:text-gray-300" href="#about">About</a>
-            <a className="hover:text-gray-300" href={youtubeUrl} target="_blank" rel="noreferrer">
-              YouTube
-            </a>
-            <a className="hover:text-gray-300" href={githubUrl} target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-            <a className="hover:text-gray-300" href={`mailto:${email}`}>
-              Email
-            </a>
-          </nav>
-          <div>
-            <a
-              className="inline-flex bg-white text-black px-6 py-2 rounded-lg text-sm font-medium hover:bg-gray-100"
-              href={githubUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub Profile
-            </a>
-          </div>
-        </div>
-      </header>
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[1440px] flex-col px-5 pb-10 pt-5 sm:px-6 md:px-10 lg:px-16">
+        <Navbar email={email} githubUrl={githubUrl} youtubeUrl={youtubeUrl} />
 
-      <main className="relative z-10 px-6 md:px-12 lg:px-16 flex flex-col min-h-[calc(100vh-4rem)]">
-        <div className="flex-1 flex flex-col justify-end pb-12 lg:pb-16">
-          <div className="lg:grid lg:grid-cols-2 lg:items-end">
-            <div id="about">
-              <AnimatedHeading text={heading} />
-              <FadeIn delay={800} duration={1000} className="max-w-3xl text-base md:text-lg text-gray-200 mb-5 space-y-4">
+        <main className="grid flex-1 items-center gap-10 pt-14 md:pt-20 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,460px)] lg:gap-20 lg:pt-24">
+          <div id="about" className="max-w-[700px]">
+            <FadeIn delay={150} duration={700}>
+              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-[color:var(--text-muted)]">
+                Personal Homepage
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={260} duration={800}>
+              <h1 className="font-display text-[clamp(2.8rem,6vw,5.8rem)] font-extrabold leading-[0.95] tracking-[-0.04em] text-[color:var(--text-main)]">
+                <span className="block">Hi, I&apos;m Jyzan.</span>
+                <span className="block">Automation Undergraduate</span>
+                <span className="block">at Shanghai Jiao Tong University.</span>
+              </h1>
+            </FadeIn>
+
+            <FadeIn delay={420} duration={850}>
+              <div className="mt-7 max-w-[640px] space-y-4 text-[1.05rem] leading-[1.75] text-[color:var(--text-muted)]">
                 <p>
                   I&apos;m an undergraduate student at{' '}
-                  <a className="text-white underline underline-offset-4 hover:text-gray-300" href={schoolUrl} target="_blank" rel="noreferrer">
+                  <a
+                    className="font-semibold text-[color:var(--accent)] transition hover:text-[color:var(--accent-strong)]"
+                    href={schoolUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Shanghai Jiao Tong University
                   </a>
-                  , majoring in Automation.
+                  , majoring in Automation. My research interests include <Accent>embodied intelligence</Accent> and{' '}
+                  <Accent>AI agents</Accent>. I also create <Accent>football</Accent> short videos on YouTube.
                 </p>
-                <p>
-                  My research interests focus on embodied intelligence and AI agents. I am passionate about exploring
-                  how intelligent systems can perceive, reason, and interact with the real world.
+                <p className="text-[color:var(--text-main)]">
+                  I&apos;m always open to learning, collaboration, and meaningful conversations.
                 </p>
-                <p>
-                  Outside of research and study, I run my own YouTube channel, where I mainly create short videos about
-                  football. I enjoy sharing ideas, learning from others, and connecting with people who have similar
-                  interests.
-                </p>
-                <p>
-                  Feel free to reach out if you would like to discuss research, AI, football, or anything interesting.
-                </p>
-              </FadeIn>
+              </div>
+            </FadeIn>
 
-              <FadeIn delay={1200} duration={1000} className="flex flex-wrap gap-4">
-                <a
-                  className="inline-flex bg-white text-black px-8 py-3 rounded-lg font-medium"
-                  href={youtubeUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  YouTube Channel
-                </a>
-                <a
-                  className="inline-flex liquid-glass border border-white/20 text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-black transition"
-                  href={githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Contact Me
-                </a>
-              </FadeIn>
-            </div>
-
-            <div className="mt-8 lg:mt-0 flex items-end justify-start lg:justify-end" id="skills">
-              <FadeIn delay={1400} duration={1000}>
-                <div className="liquid-glass border border-white/20 px-6 py-5 rounded-xl max-w-md">
-                  <div className="text-xs uppercase tracking-[0.18em] text-gray-300 mb-3">Student Profile</div>
-                  <div className="text-lg md:text-xl lg:text-2xl font-light">
-                    Embodied intelligence, AI agents, and student-built projects.
-                  </div>
-                  <div className="mt-4 text-sm text-gray-300 space-y-1" id="projects">
-                    <p>School: Shanghai Jiao Tong University</p>
-                    <p>Major: Automation</p>
-                    <p>Research: Embodied intelligence and AI agents</p>
-                  </div>
-                  <div className="mt-4 text-sm text-gray-200" id="contact">
-                    <p>Email: {email}</p>
-                    <p className="mt-1">QQ: {qqMail}</p>
-                    <p className="mt-1">
-                      YouTube:{' '}
-                      <a className="hover:text-white" href={youtubeUrl} target="_blank" rel="noreferrer">
-                        @ManCITEA
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </FadeIn>
-            </div>
+            <FadeIn delay={560} duration={900} className="mt-9 flex flex-wrap gap-4">
+              <a
+                className="primary-button"
+                href={youtubeUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                YouTube Channel
+              </a>
+              <a
+                className="secondary-button"
+                href={githubUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Contact Me
+              </a>
+            </FadeIn>
           </div>
-        </div>
-      </main>
-    </div>
+
+          <div className="flex justify-start lg:justify-end lg:pt-24">
+            <FadeIn delay={680} duration={950}>
+              <ProfileCard email={email} qqMail={qqMail} schoolUrl={schoolUrl} youtubeUrl={youtubeUrl} />
+            </FadeIn>
+          </div>
+        </main>
+      </div>
+    </section>
   )
 }

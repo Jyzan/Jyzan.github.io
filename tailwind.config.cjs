@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Manrope', 'sans-serif'],
+        display: ['Space Grotesk', 'Manrope', 'sans-serif'],
       },
       colors: {
         'glass-border': 'rgba(255,255,255,0.2)'
